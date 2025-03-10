@@ -8,14 +8,6 @@ def translation_matrix(tx, ty):
         [0, 0, 1]
     ])
 
-def rotation_matrix(angle):
-    theta = np.radians(angle)
-    return np.array([
-        [np.cos(theta), -np.sin(theta), 0],
-        [np.sin(theta), np.cos(theta), 0],
-        [0, 0, 1]
-    ])
-
 def scaling_matrix(sx, sy):
     return np.array([
         [sx, 0, 0],
@@ -38,10 +30,9 @@ angle = 30
 sx, sy = 2, 1
 
 T = translation_matrix(tx, ty)
-R = rotation_matrix(angle)
 S = scaling_matrix(sx, sy)
 
-composite_matrix = S @ R @ T
+composite_matrix = S @ T
 transformed_points = transform_points(points, composite_matrix)
 
 plt.figure(figsize=(8, 8))
