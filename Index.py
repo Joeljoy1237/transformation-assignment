@@ -29,8 +29,8 @@ def transform_points(points, matrix):
     return transformed_points[:2, :]
 
 points = np.array([
-    [0, 0, 2, 2, 0],
-    [0, 2, 2, 0, 0]
+    [0, 2, 1.5, -1.5,-2,0],
+    [2, 0.5, -1.5, -1.5,0.5,2]
 ])
 
 tx, ty = -3, 4
